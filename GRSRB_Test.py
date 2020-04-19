@@ -4,6 +4,8 @@ import pandas as pd
 from torch.utils.data import Dataset
 from PIL import Image
 
+__name__ = 'GTSRB_Test'
+
 class GTSRB_Test(Dataset):
     
     def __init__(self, images_dir='./source_data/test/GTSRB/Final_Test/Images', 
