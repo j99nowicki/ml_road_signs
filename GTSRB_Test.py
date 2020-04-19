@@ -4,8 +4,6 @@ import pandas as pd
 from torch.utils.data import Dataset
 from PIL import Image
 
-__name__ = 'GTSRB_Test'
-
 class GTSRB_Test(Dataset):
     
     def __init__(self, images_dir='./source_data/test/GTSRB/Final_Test/Images', 
@@ -25,13 +23,12 @@ class GTSRB_Test(Dataset):
         self.gt_csv_path = gt_csv_path
 
         self.gt_data = pd.read_csv(gt_csv_path, header=0, sep=';')
-        self.gt_data['_000ClassId']=gt_data.ClassId.astype(str).str.zfill(5)
+        self.gt_data['_000ClassId']=self.gt_data.ClassId.astype(str).str.zfill(5)
         self.transform = transform
         
-        classes, class_to_idx = self._find_classes(self )
+        classes, class_to_idx = self._find_classes()
         self.classes = classes
         self.class_to_idx = class_to_idx
-        print(classes)
 
     def __len__(self):
         return len(self.gt_data)
@@ -56,8 +53,7 @@ class GTSRB_Test(Dataset):
         Returns:
             tuple: (classes, class_to_idx), class_to_idx is a dictionary.
         """
-        print('hello')
-        classes = pd.unique(gt_data['_000ClassId'])
+        classes = pd.unique(self.gt_data['_000ClassId'])
         classes.sort()
         class_to_idx = {classes[i]: i for i in range(len(classes))}
         return classes, class_to_idx
