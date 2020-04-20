@@ -37,8 +37,7 @@ class GTSRB_Test(Dataset):
         img_path = os.path.join(self.images_dir, self.gt_data.iloc[idx, 0])
         img = Image.open(img_path)
 
-        classId = self.gt_data.iloc[idx, '_000ClassId']
-
+        classId = self.gt_data.iloc[idx, self.gt_data.columns.get_loc('_000ClassId')]
         if self.transform is not None:
             img = self.transform(img)
             
