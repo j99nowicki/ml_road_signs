@@ -19,4 +19,7 @@ def make_dir(dir_name):
         os.makedirs(dir_name)
         
 def rm_tree(path_to_dir):
-     rmtree(path_to_dir)
+    try:
+        rmtree(path_to_dir)
+    except FileNotFoundError:
+        pass
