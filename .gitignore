@@ -1,1 +1,14 @@
 source_data*
+.ipynb_checkpoints/
+cpu_test/
+model/
+samples.tar.gz
+samples/
+weights.csv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
