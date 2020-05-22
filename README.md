@@ -2,9 +2,9 @@
 
 Implementation of Road Signs Classifier using PyToarch CNN with STN. 
 
-This is a Jupyter development project. 
-To try the live deployment go here: https://rscwebapp.herokuapp.com
-For web web project go to: https://github.com/j99nowicki/ml_road_signs_web
+This is a Jupyter development project. <br>
+To try the live deployment go here: https://rscwebapp.herokuapp.com <br>
+For web web project go to: https://github.com/j99nowicki/ml_road_signs_web <br>
 
 # The summary of the steps in this project
 
@@ -18,11 +18,11 @@ For web web project go to: https://github.com/j99nowicki/ml_road_signs_web
 # Instructions for executing notebooks
 
 Notebooks require two jupyter instances: CPU and GPU or just GPU, if cost is not a concern.
-
+<br>
 Notebooks should clone this github project. 
-
+<br>
 Notebooks and instances exchange some data via S3. I uploaded them later to public bucket so it is possible to run them out of order.
-
+<br>
 There are six notebooks in the project. First three notebooks should be run in sequence on CPU:
 
 * CPU: 	1. Download data
